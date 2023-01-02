@@ -45,7 +45,9 @@ ul {
   --font-color-social-footer: #fff;
   --font-color-social-hover: #fff;
 
-  --font-color-abotu-us-title: #fff;
+  --font-color-about-us-title: #fff;
+
+  --font-color-card-description: #fff;
 
   /* | LOGO COLORS*/
   --font-color-logo-primary: #2196f3;
@@ -77,6 +79,8 @@ ul {
 
   --bgcolor-about-us-title: #2f303acc;
 
+  --bgcolor-card-background: #2196f3e5;
+
   --bgcolor-page-active: #2196f3;
 
   /* | BUTTONS BACKGROUND */
@@ -107,6 +111,7 @@ ul {
   --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bgcolor: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-shadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* || ANIMATIONS */
   --animation-client-svg: svg-element 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -418,7 +423,7 @@ body {
   background-color: var(--bgcolor-about-us-title);
 }
 .about-us__title {
-  color: var(--font-color-abotu-us-title);
+  color: var(--font-color-about-us-title);
   text-transform: uppercase;
 }
 
@@ -597,6 +602,7 @@ body {
   align-items: center;
   gap: 30px;
 }
+
 .card__info {
   padding: 20px 0 20px 24px;
 
@@ -612,9 +618,36 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.card__description {
+.card__type {
   color: var(--font-color-p);
   font-size: 1rem;
   line-height: 1.875;
+  letter-spacing: 0.03em;
+}
+.card__position {
+  position: relative;
+  overflow: hidden;
+}
+.card__background {
+  position: absolute;
+  inset: 0;
+
+  padding: 49px 45px 49px 24px;
+
+  background-color: var(--bgcolor-card-background);
+
+  transition: var(--transition-transform);
+  transform: translateY(100%);
+  pointer-events: none;
+}
+.card__item:hover .card__background {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.card__description {
+  color: var(--font-color-card-description);
+
+  font-size: 1.125rem;
+  line-height: 1.556;
   letter-spacing: 0.03em;
 }
