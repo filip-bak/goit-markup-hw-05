@@ -83,6 +83,8 @@ ul {
 
   --bgcolor-page-active: #2196f3;
 
+  --bgcolor-modal: #fff;
+
   /* | BUTTONS BACKGROUND */
   --bgcolor-button-primary: #2196f3;
   --bgcolor-button-primary-hover: #1076c9;
@@ -106,6 +108,8 @@ ul {
     0px 1px 2px 0px #00000014, 0px 3px 1px 0px #0000001a;
   --shadow-portfolio-card-item-hover: 1px 4px 6px 0px #00000029,
     0px 4px 4px 0px #0000000f, 0px 1px 1px 0px #0000001f;
+  --shadow-modal: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
   /* || TRANSITIONS */
   --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -207,7 +211,51 @@ ul {
 .card__item:hover {
   box-shadow: var(--shadow-portfolio-card-item-hover);
 }
+/* || MODAL */
+.backdrop {
+  position: fixed;
+  inset: 0;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(1px);
+}
+.modal {
+  position: absolute;
+  z-index: 2;
+
+  width: 528px;
+  height: 581px;
+
+  background-color: var(--bgcolor-modal);
+  border-radius: 4px;
+
+  box-shadow: var(--shadow-modal);
+}
+.modal__button--close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  padding: 5px 9px;
+
+  border: 1px solid #0000001a;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
 /* || General */
 body {
   margin: 0 auto;
@@ -216,6 +264,7 @@ body {
   color: var(--font-color-primary);
   font-family: var(--ff);
   font-size: var(--fs);
+
   background-color: var(--bgcolor);
 }
 
