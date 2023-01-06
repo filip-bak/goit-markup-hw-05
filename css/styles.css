@@ -240,9 +240,6 @@ ul {
 
 /* || General */
 body {
-  margin: 0 auto;
-  max-width: 1600px;
-
   color: var(--font-color-primary);
   font-family: var(--ff);
   font-size: var(--fs);
@@ -345,6 +342,9 @@ body {
 
 /* || MAIN */
 .banner {
+  max-width: 1600px;
+  margin: 0 auto;
+
   color: var(--font-color-secondary);
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
